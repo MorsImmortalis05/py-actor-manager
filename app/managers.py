@@ -20,6 +20,7 @@ class ActorManager:
             f"(first_name, last_name) VALUES (?, ?)",
             (first_name, last_name,)
         )
+        self._connection.commit()
 
     def all(self) -> list[Actor]:
         actor_manager_cursor = self._connection.execute(
